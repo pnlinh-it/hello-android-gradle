@@ -11,6 +11,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
     }
+    includeBuild("build-logic")
 }
 rootProject.name = "hello-android-gradle"
 include(":app")
