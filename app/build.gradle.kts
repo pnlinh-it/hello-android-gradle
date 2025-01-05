@@ -1,6 +1,8 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
+    // alias(libs.plugins.android.application)
+    // alias(libs.plugins.kotlin.android)
+    id("com.example.mycustomplugin")
+    id("com.example.application")
 }
 
 android {
@@ -9,8 +11,8 @@ android {
 
     defaultConfig {
         applicationId = "com.example.myapplication"
-        minSdk = 21
-        targetSdk = 34
+        // minSdk = 21
+        // targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -38,14 +40,14 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.lifecycle.livedata.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.androidx.navigation.ui.ktx)
-
-    implementation(libs.coroutine.android)
+    // implementation(libs.androidx.core.ktx)
+    // implementation(libs.androidx.appcompat)
+    // implementation(libs.material)
+    // implementation(libs.androidx.constraintlayout)
+    // implementation(libs.androidx.lifecycle.livedata.ktx)
+    // implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    // implementation(libs.androidx.navigation.fragment.ktx)
+    // implementation(libs.androidx.navigation.ui.ktx)
+    //
+    // implementation(libs.coroutine.android)
 }

@@ -1,23 +1,25 @@
 plugins {
-   kotlin("jvm") version "1.5.21" // or the appropriate Kotlin version
    `kotlin-dsl`
-   `java-gradle-plugin`
+}
+
+group = "com.example.convention.plugin"
+
+dependencies {
+   compileOnly(libs.android.gradlePlugin)
+   compileOnly(libs.kotlin.gradlePlugin)
 }
 
 gradlePlugin {
    plugins {
-      create("myCustomPlugin") {
+      register("myCustomPlugin") {
          id = "com.example.mycustomplugin"
          implementationClass = "MyCustomPlugin"
+      }
+
+      register("AndroidApplicationPlugin") {
+         id = "com.example.application"
+         implementationClass = "AndroidApplicationPlugin"
       }
    }
 }
 
-repositories {
-   mavenCentral() // Repository for resolving dependencies
-}
-
-dependencies {
-   implementation(gradleApi())
-   implementation(localGroovy())
-}

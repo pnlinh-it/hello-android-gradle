@@ -4,7 +4,7 @@ import org.gradle.api.Project
 class MyCustomPlugin : Plugin<Project> {
     override fun apply(project: Project) {
         project.tasks.register("printMessage") {
-            it.doLast {
+            doLast {
                 println("Hello from the Custom Plugin!")
             }
         }
