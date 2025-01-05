@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "hello-android-gradle"
-include ':app'
+include(":app")
