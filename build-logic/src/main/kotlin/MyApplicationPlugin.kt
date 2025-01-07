@@ -1,3 +1,4 @@
+import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
 import org.gradle.api.Action
 import org.gradle.api.JavaVersion
@@ -6,6 +7,7 @@ import org.gradle.api.Project
 import org.gradle.api.artifacts.MinimalExternalModuleDependency
 import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.api.artifacts.dsl.DependencyHandler
+import org.gradle.api.plugins.ExtensionAware
 import org.gradle.api.provider.Provider
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
@@ -27,7 +29,8 @@ class MyApplicationPlugin : Plugin<Project> {
             val minSdkVersion = libs.findVersion("minSdk").get().requiredVersion.toInt()
             val appVersion = libs.findVersion("appVersion").get().requiredVersion
 
-            extensions.configure<BaseAppModuleExtension> {
+            // BaseAppModuleExtension
+            extensions.configure<ApplicationExtension> {
                 compileSdk = compileSdkVersion
 
                 defaultConfig {
@@ -91,5 +94,7 @@ class MyApplicationPlugin : Plugin<Project> {
 internal fun DependencyHandler.implementation(dependency: Optional<Provider<MinimalExternalModuleDependency>>) =
     add("implementation", dependency.get())
 
-internal fun Project.kotlinOptions(configure: Action<KotlinJvmOptions>): Unit =
-    extensions.configure("kotlinOptions", configure)
+internal
+fun ApplicationExtension.kotlinOptions(configure: Action<KotlinJvmOptions>): Unit =
+    (this as ExtensionAware).extensions.configure("kotlinOptions", configure)
+

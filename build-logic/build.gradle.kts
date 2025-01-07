@@ -4,12 +4,19 @@ plugins {
 //   `java-gradle-plugin`
 }
 
+group = "com.example.convention.plugin"
+
 gradlePlugin {
    plugins {
       create("MyApplicationPlugin") {
          id = "com.example.myapplication"
          implementationClass = "MyApplicationPlugin"
       }
+
+//      register("AndroidApplicationPlugin") {
+//         id = "com.example.application"
+//         implementationClass = "AndroidApplicationPlugin"
+//      }
    }
 }
 
