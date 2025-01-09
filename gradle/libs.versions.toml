@@ -6,7 +6,8 @@ targetSdk = "34"
 minSdk = "21"
 
 agp = "8.4.0"
-kotlin = "1.7.20"
+#kotlin = "1.7.20"
+kotlin = "1.9.24"
 coreKtx = "1.7.0"
 appcompat = "1.4.1"
 material = "1.5.0"
@@ -16,6 +17,9 @@ lifecycleViewModeKtx = "2.4.1"
 navigationFragmentKtx = "2.4.1"
 navigationUiKtx = "2.4.1"
 coroutineAndroid = "1.7.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -30,6 +34,9 @@ coroutine-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutine
 
 android-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
 kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
